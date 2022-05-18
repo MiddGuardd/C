@@ -36,6 +36,7 @@ int test_win(char (*grid)[3], char c){
       }
     }
   }
+  return 0;
 }
 
 //ON FAIT JOUER LE JOUEUR (TOUT LE TEMPS UP)
@@ -117,16 +118,18 @@ int tour_bot(char (*grid)[3], char c){
 
 //ON RELANCE UNE PARTIE
 int reset_game(char (*grid)[3]){
-  char c;
+  char c = ' ';
 
-  printf("Rejouer (y/n)?\n");
-  scanf(" %c", &c);
+  while (c != 'y' && c != 'n')
+  {
+    printf("Rejouer (y/n)?\n");
+    scanf(" %c", &c);
+  }
 
   if(c=='y'){
     init_grid(grid);
     return 0;
   }
-  else if(c=='n'){
-    return 1;
-  }
+
+  return 1;
 }
