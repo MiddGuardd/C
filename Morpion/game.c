@@ -4,25 +4,15 @@
 int score_j1=0, score_adv=0;
 
 int init_game(char (*grid)[3]){
-  char ordi;
+  char ordi = ' ';
 
-  printf("Voulez-vous jouer contre l'ordinateur (y/n)?\n");
-  scanf("%c", &ordi);
-    
-  //ON JOUE CONTRE L'ORDI
-  if(ordi=='y'){
-    return 1;
+  while (ordi != 'y' && ordi != 'n')
+  {
+    printf("Voulez-vous jouer contre l'ordinateur (y/n)?\n");
+    scanf("%c", &ordi);
   }
-  
-  //ON JOUE CONTRE UN JOUEUR
-  else if(ordi=='n'){
-    return 0;
-  }
-      
-  //REPONSE INVALIDE
-  else{
-    return 2;
-  }
+
+  return ordi == 'y';
 }
 
 //ON REGARE SI LE JOUEUR A GAGNE
