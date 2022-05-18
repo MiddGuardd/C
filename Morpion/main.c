@@ -7,7 +7,7 @@ int main(void) {
   
   //VARIABLES
   char tab[3][3]={{'O','O','O'}, {'O','O','O'}, {'O','O','O'}};
-  int x,y; int j1=0, j2=0, ordi=0; int score =0;
+  int j1=0, j2=0, ordi=0;
   char char_j1, char_j2;
 
   //VARIABLE POUR VOIR SI ON FAIT DU JCJ OU PAS

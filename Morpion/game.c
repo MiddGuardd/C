@@ -3,26 +3,16 @@
 #include "char_array.h"
 int score_j1=0, score_adv=0;
 
-int init_game(char (*grid)[3]){
-  char ordi;
+int init_game(void){
+  char ordi = ' ';
 
-  printf("Voulez-vous jouer contre l'ordinateur (y/n)?\n");
-  scanf("%c", &ordi);
-    
-  //ON JOUE CONTRE L'ORDI
-  if(ordi=='y'){
-    return 1;
+  while (ordi != 'y' && ordi != 'n')
+  {
+    printf("Voulez-vous jouer contre l'ordinateur (y/n)?\n");
+    scanf("%c", &ordi);
   }
-  
-  //ON JOUE CONTRE UN JOUEUR
-  else if(ordi=='n'){
-    return 0;
-  }
-      
-  //REPONSE INVALIDE
-  else{
-    return 2;
-  }
+
+  return ordi == 'y';
 }
 
 //ON REGARE SI LE JOUEUR A GAGNE
@@ -46,6 +36,7 @@ int test_win(char (*grid)[3], char c){
       }
     }
   }
+  return 0;
 }
 
 //ON FAIT JOUER LE JOUEUR (TOUT LE TEMPS UP)
@@ -127,16 +118,18 @@ int tour_bot(char (*grid)[3], char c){
 
 //ON RELANCE UNE PARTIE
 int reset_game(char (*grid)[3]){
-  char c;
+  char c = ' ';
 
-  printf("Rejouer (y/n)?\n");
-  scanf(" %c", &c);
+  while (c != 'y' && c != 'n')
+  {
+    printf("Rejouer (y/n)?\n");
+    scanf(" %c", &c);
+  }
 
   if(c=='y'){
     init_grid(grid);
     return 0;
   }
-  else if(c=='n'){
-    return 1;
-  }
+
+  return 1;
 }

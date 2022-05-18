@@ -64,7 +64,7 @@ typedef struct{
 
 extern WARRIOR *init_warrior();
 extern THIEF *init_thief();
-extern HEALER *init_healer();;
+extern HEALER *init_healer();
 extern PLAYER *init_player();
 extern MONSTER *init_monster(int a);
 extern BOSS *init_boss(int a);
