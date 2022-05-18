@@ -3,7 +3,7 @@
 #include "char_array.h"
 int score_j1=0, score_adv=0;
 
-int init_game(char (*grid)[3]){
+int init_game(void){
   char ordi = ' ';
 
   while (ordi != 'y' && ordi != 'n')
