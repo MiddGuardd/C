@@ -1,5 +1,7 @@
 #include "define.h"
 
+//DIFFERENTES FONCTIONS QUI VONT PERMETTRE DE DECIDER LES DIFFERENTES COMPOSANTES DE NOTRE MOT DE PASSE (MAJUSCULES/MINUSCULES/CHIFFRES/CARACTERES SPECIAUX
+
 void min(MDP *mot){
   char test;
     printf("Votre mot de passe doit-il contenir des lettres minuscules ? (y/n)\n");
@@ -38,6 +40,9 @@ void spec(MDP *mot){
     if(test=='y') mot->spec = 1;
     else mot->spec = 0;
 }
+
+// LA FONCTION PERMETTANT D'INITIALISER LA STRUCTURE DU MOT DE PASSE
+// L'UTILISATEUR Y DEFINIT LA TAILLE SOUHAITEE
 
 MDP *init_mdp(){
   MDP *mot=malloc(sizeof(MDP));
