@@ -23,25 +23,10 @@ void init_grid(char (*grid)[3]){
 
 //JOUER SUR UNE CASE
 void update_grid(char (*grid)[3], char c, int x, int y){
-   for(int i=0; i<3; i++){
-     for(int j=0; j<3; j++){
-       if(i==x && j==y){
-         grid[i][j]=c;
-        }
-   }
- }
+   grid[x][y]=c;
 }
 
 //VERIFIER SI LA CASE EST NON-UTILISEE
 int test_case(char (*grid)[3], char c, int x, int y){
-  for(int i=0; i<3; i++){
-    for(int j=0; j<3; j++){
-      if(i==x && j==y){
-        if(grid[i][j]==c){
-          return 0;
-        }
-      }
-    }
-  }
-  return 1;
+     return grid[x][y]!=c;
 }
